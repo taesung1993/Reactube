@@ -18,7 +18,7 @@ import Video from "./Video";
 // unmounting: state를 사용해서 컴포넌트를 바꾸거나 페에지를 바꿀 때 발생
 // componentDidMount: "이봐, 이 컴포넌트가 처음 랜더됐어!"
 
-const API_KEY = "AIzaSyCs7n2FsIyjBLMzRb3tPGOGnhrajpnRBVE";
+const API_KEY = "API_KEY";
 const API_URL = `https://www.googleapis.com/youtube/v3`;
 
 class App extends React.Component {
