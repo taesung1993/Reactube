@@ -1,7 +1,6 @@
 import React from "react";
 import axios from "axios";
 import dotenv from "dotenv";
-import { Link } from "react-router-dom";
 
 import Video from "../components/Video";
 
@@ -15,7 +14,6 @@ class Result extends React.Component {
     super(props);
     const path = this.props.location.search;
     const query = new URLSearchParams(path).get("keyword");
-    console.log(path, query);
     this.state = {
       isLoading: true,
       keyword: query,

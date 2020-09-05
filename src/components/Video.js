@@ -5,9 +5,9 @@ const Video = ({ id, title, creator, publishedAt, thumbnail }) => {
   return (
     <section>
       <img src={thumbnail} alt="thumbnail" />
-      <h3>{title}</h3>
-      <span>{creator}</span>
-      <span>{publishedAt}</span>
+      <h3 className="title">{title}</h3>
+      <span className="creator">{creator}</span>
+      <span className="publishedAt">{publishedAt}</span>
     </section>
   );
 };

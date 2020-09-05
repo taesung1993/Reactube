@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./Home.scss";
 
 class Home extends React.Component {
   constructor(props) {
@@ -19,22 +20,33 @@ class Home extends React.Component {
     const { keyword } = this.state;
     return (
       <div className="container">
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            placeholder="Enter your keyword"
-            name="keyword"
-            onChange={this.handleChange}
-          />
-          <Link
-            to={{
-              pathname: "/result",
-              search: `?keyword=${keyword}`,
-            }}
-          >
-            <button>Search</button>
-          </Link>
-        </form>
+        <header>
+          <span>Reactube</span>
+          <span>serch the video you want to see</span>
+        </header>
+        <main>
+          <div className="search-box">
+            <h3>Search the the keyword.</h3>
+            <form onSubmit={this.handleSubmit}>
+              <input
+                type="text"
+                placeholder="Enter your keyword"
+                name="keyword"
+                onChange={this.handleChange}
+              />
+              <button>
+                <Link
+                  to={{
+                    pathname: "/result",
+                    search: `?keyword=${keyword}`,
+                  }}
+                >
+                  Search
+                </Link>
+              </button>
+            </form>
+          </div>
+        </main>
       </div>
     );
   }
