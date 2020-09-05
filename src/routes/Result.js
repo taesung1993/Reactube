@@ -1,8 +1,9 @@
 import React from "react";
 import axios from "axios";
 import dotenv from "dotenv";
-
 import Video from "../components/Video";
+import { Link } from "react-router-dom";
+import "./Result.scss";
 
 dotenv.config();
 
@@ -70,44 +71,58 @@ class Result extends React.Component {
   render() {
     const { isLoading, videos } = this.state;
     return (
-      <div>
-        <header>
-          <form onSubmit={this.handleSubmit}>
-            <input
-              type="text"
-              placeholder="enter your keyword"
-              onChange={this.handleChange}
-            />
-            <input type="submit" value="Search" />
-          </form>
+      <div className="container">
+        <header className="result__header">
+          <div className="header__column">
+            <Link to="/">
+              <span>Reactube</span>
+            </Link>
+          </div>
+          <div className="header__column">
+            <form onSubmit={this.handleSubmit}>
+              <input
+                type="text"
+                placeholder="enter your keyword"
+                onChange={this.handleChange}
+              />
+            </form>
+          </div>
+          <div className="header__column">
+            <span>serch the video you want to see</span>
+          </div>
         </header>
         <main>
-          {isLoading
-            ? "Loading..."
-            : videos.map((video) => {
-                const {
-                  id: { videoId },
-                  snippet: {
-                    channelTitle: creator,
-                    publishedAt,
-                    title,
-                    thumbnails: {
-                      medium: { url: thumbnail },
-                    },
+          {isLoading ? (
+            <div className="loading-box">
+              <div className="loading"></div>
+              <div className="text">Loading</div>
+            </div>
+          ) : (
+            videos.map((video) => {
+              const {
+                id: { videoId },
+                snippet: {
+                  channelTitle: creator,
+                  publishedAt,
+                  title,
+                  thumbnails: {
+                    medium: { url: thumbnail },
                   },
-                } = video;
+                },
+              } = video;
 
-                return (
-                  <Video
-                    key={videoId}
-                    id={videoId}
-                    title={title}
-                    creator={creator}
-                    publishedAt={publishedAt}
-                    thumbnail={thumbnail}
-                  />
-                );
-              })}
+              return (
+                <Video
+                  key={videoId}
+                  id={videoId}
+                  title={title}
+                  creator={creator}
+                  publishedAt={publishedAt}
+                  thumbnail={thumbnail}
+                />
+              );
+            })
+          )}
         </main>
       </div>
     );

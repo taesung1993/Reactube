@@ -8,6 +8,7 @@
   main {
     flex: 1;
     display: flex;
+    justify-content: center;
     align-items: center;
     .search-box {
       margin: 0 auto;
@@ -46,16 +47,9 @@
           border: none;
           border-radius: 5px;
           padding: 5px 0;
+          color: white;
           &:hover {
             background-color: #a29bfe;
-          }
-          a {
-            text-decoration: none;
-            color: white;
-            font-size: 12px;
-            font-weight: 500;
-            letter-spacing: 1px;
-            vertical-align: middle;
           }
         }
       }

@@ -16,12 +16,22 @@ class Home extends React.Component {
     });
   };
 
-  render() {
+  handleSubmit = (event) => {
+    event.preventDefault();
     const { keyword } = this.state;
+    this.props.history.push({
+      pathname: "/result",
+      search: `?keyword=${keyword}`,
+    });
+  };
+
+  render() {
     return (
       <div className="container">
         <header>
-          <span>Reactube</span>
+          <Link to="/">
+            <span>Reactube</span>
+          </Link>
           <span>serch the video you want to see</span>
         </header>
         <main>
@@ -34,16 +44,7 @@ class Home extends React.Component {
                 name="keyword"
                 onChange={this.handleChange}
               />
-              <button>
-                <Link
-                  to={{
-                    pathname: "/result",
-                    search: `?keyword=${keyword}`,
-                  }}
-                >
-                  Search
-                </Link>
-              </button>
+              <button type="submit">Search</button>
             </form>
           </div>
         </main>
