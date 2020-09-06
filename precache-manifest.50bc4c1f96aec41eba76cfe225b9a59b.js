@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4d3e2bcc418895137139556260879fbd",
+    "revision": "551f4d84b523de831ec63ffba3072962",
     "url": "/Reactube/index.html"
   },
   {
-    "revision": "2ac000d5148124bf7f48",
+    "revision": "5acbee0181bd104aa1b8",
     "url": "/Reactube/static/css/main.c6790468.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Reactube/static/js/2.7fc9e47f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "2ac000d5148124bf7f48",
-    "url": "/Reactube/static/js/main.47146988.chunk.js"
+    "revision": "5acbee0181bd104aa1b8",
+    "url": "/Reactube/static/js/main.77b3dab4.chunk.js"
   },
   {
     "revision": "a928c1d39a1b66ba9a99",
