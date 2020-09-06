@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Reactube/precache-manifest.5c34f99a702a3b7726d82f70a7d334e8.js"
+  "/Reactube/precache-manifest.b45eceb3fa37bafbef120b8e9e07e5fc.js"
 );
 
 self.addEventListener('message', (event) => {
